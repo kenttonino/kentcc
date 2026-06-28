@@ -1,5 +1,9 @@
 OBJECTS=
 INCLUDES= -I./
 
-all: ${OBJECTS}
+build: ${OBJECTS}
 	gcc ./src/main.c ${INCLUDES} ${OBJECTS} -g -o ./bin/kentcc
+
+clean:
+	rm ./bin/kentcc
+	rm -rf ${OBJECTS}
