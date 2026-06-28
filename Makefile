@@ -19,5 +19,5 @@ clean:
 	rm ./bin/kentcc
 	rm -rf ${OBJECTS}
 
-run: build
+run: all
 	./bin/kentcc

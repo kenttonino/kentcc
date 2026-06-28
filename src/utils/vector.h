@@ -5,6 +5,11 @@
 // Atleast 20 vector element spaces in reserve before reallocating memory.
 #define VECTOR_ELEMENT_INCREMENT 20
 
+enum
+{
+    VECTOR_FLAG_PEEK_DECREMENT = 0b00000001
+};
+
 typedef struct Vector {
   // Pointer to the allocated memory holding the elements.
   // It can store any data type.
@@ -29,5 +34,8 @@ typedef struct Vector {
 } Vector;
 
 extern Vector* vector_create(size_t element_size);
+extern void vector_push(Vector* vector, void* element);
+extern void vector_set_peek_pointer(Vector *vector, int index);
+extern void* vector_peek(Vector* vector);
 
 #endif
