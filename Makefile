@@ -7,3 +7,6 @@ build: ${OBJECTS}
 clean:
 	rm ./bin/kentcc
 	rm -rf ${OBJECTS}
+
+run: build
+	./bin/kentcc
