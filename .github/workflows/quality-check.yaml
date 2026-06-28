@@ -13,5 +13,8 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v5
 
-    - name: Build
+    - name: Build kentcc
       run: make build
+
+    - name: Clean kentcc
+      run: make clean
