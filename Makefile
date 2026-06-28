@@ -1,5 +1,5 @@
-build:
-	gcc -g -o ./bin/kentcc ./src/main.c
+OBJECTS=
+INCLUDES= -I./
 
-run: build
-	./bin/kentcc
+all: ${OBJECTS}
+	gcc ./src/main.c ${INCLUDES} ${OBJECTS} -g -o ./bin/kentcc
