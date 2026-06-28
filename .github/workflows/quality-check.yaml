@@ -7,14 +7,14 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  all:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v5
 
     - name: Build kentcc
-      run: make build
+      run: make
 
     - name: Clean kentcc
       run: make clean
