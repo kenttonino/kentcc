@@ -1,0 +1,9 @@
+#ifndef COMPILER_H
+#define COMPILER_H
+
+enum {
+ COMPILER_FILE_COMPILED_OK,
+ COMPILER_FAILED_WITH_ERRORS,
+};
+
+#endif
