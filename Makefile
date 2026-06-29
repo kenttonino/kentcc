@@ -1,4 +1,4 @@
-OBJECTS= ./build/compiler.o ./build/compiler_process.o
+OBJECTS= ./build/compiler.o ./build/compiler_process.o ./build/utils/vector.o
 INCLUDES= -I./
 
 all: ${OBJECTS}
@@ -12,9 +12,12 @@ all: ${OBJECTS}
 	# -c: Compile and assemble but do not link.
 	gcc ./src/compiler_process/compiler_process.c ${INCLUDES} -o ./build/compiler_process.o -g -c
 
+./build/utils/vector.o: ./src/utils/vector.c
+	gcc ./src/utils/vector.c ${INCLUDES} -o ./build/utils/vector.o -g -c
+
 clean:
 	rm ./bin/kentcc
 	rm -rf ${OBJECTS}
 
-run: build
+run: all
 	./bin/kentcc
